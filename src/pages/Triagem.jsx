@@ -6,6 +6,7 @@ const Triagem = () => {
   const [motivo, setMotivo] = useState("");
   const [filaDeAtendimento, setFilaDeAtendimento] = useState([]);
   const [prioridade, setPrioridade] = useState("");
+  const [prioridadeCode, setPrioridadeCode] = useState(0);
   const navigate = useNavigate();
 
   // Carregar dados do localStorage quando o componente montar
@@ -26,17 +27,27 @@ const Triagem = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (prioridade === "urgente") {
+      setPrioridadeCode(2);
+    } else if (prioridade === "moderado") {
+      setPrioridadeCode(1);
+    } else if (prioridade === "leve") {
+      setPrioridadeCode(0);
+    }
+  }, [prioridade]);
+
   const handleSubmit = () => {
     if (!prioridade) {
       alert("Por favor, selecione uma prioridade!");
       return;
     } else {
-      navigate("/paciente/fila-de-espera");
       const novoAtendimento = {
         id: Date.now(),
         paciente: paciente,
         motivo: motivo,
         prioridade: prioridade,
+        prioridadeCode: prioridadeCode,
         timestamp: new Date().toISOString(),
       };
 
@@ -45,7 +56,7 @@ const Triagem = () => {
 
       // Salvar no localStorage
       localStorage.setItem("filaDeAtendimento", JSON.stringify(novaFila));
-
+      navigate("/paciente/fila-de-espera");
       alert("Triagem realizada com sucesso!");
       setPrioridade("");
     }

@@ -6,7 +6,7 @@ const FilaEspera = () => {
         <div style={{ marginTop: "30px" }}>
           <h2>Fila de Atendimento</h2>
           <ul style={{ listStyle: "none", padding: "0" }}>
-            {filaDeAtendimento.map((item) => (
+            {filaDeAtendimento.sort((a, b) => b.prioridadeCode - a.prioridadeCode).map((item) => (
               <li
                 key={item.id}
                 style={{
