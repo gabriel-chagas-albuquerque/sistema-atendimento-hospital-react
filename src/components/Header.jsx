@@ -1,7 +1,10 @@
-
+import '../styles/Header.css'
 const Header = () => {
     return ( 
-        <h1>Header</h1>
+        <header>
+      <h1>Sistema de Atendimento Hospitalar</h1>
+      <p>Bem vindo ao nosso Sistema de Atendimento!</p>
+    </header>
      );
 }
  
