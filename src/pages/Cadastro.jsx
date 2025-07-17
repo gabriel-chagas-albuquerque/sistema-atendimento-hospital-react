@@ -46,6 +46,9 @@ function Cadastro() {
         </div>
         <button id="btn-cadastro" type="submit">Cadastrar</button>
       </form>
+      <footer>
+        <Link to="/">Página Inicial</Link>
+      </footer>
     </div>
   );
 }

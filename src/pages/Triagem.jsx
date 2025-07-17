@@ -246,6 +246,10 @@ const Triagem = () => {
       </div>
 
       {/* Mostrar fila de atendimento se houver itens */}
+
+      <footer>
+        <Link to="/">Página Inicial</Link>
+      </footer>
     </div>
   );
 };

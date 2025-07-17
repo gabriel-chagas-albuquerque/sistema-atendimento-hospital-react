@@ -1,5 +1,10 @@
 const FilaEspera = () => {
-    const filaDeAtendimento = JSON.parse(localStorage.getItem("filaDeAtendimento")) || [];
+    const [filaDeAtendimento, setFilaDeAtendimento] = useState([]);
+
+  useEffect(() => {
+    const dados = JSON.parse(localStorage.getItem("filaDeAtendimento")) || [];
+    setFilaDeAtendimento(dados);
+  }, []);
 
   return (
     <>
@@ -46,7 +51,10 @@ const FilaEspera = () => {
             ))}
           </ul>
       )}
-        </div>
+      <footer>
+        <Link to="/">Página Inicial</Link>
+      </footer>
+    </div>
     </>
   );
 };

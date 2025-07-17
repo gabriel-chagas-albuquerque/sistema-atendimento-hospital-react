@@ -84,6 +84,9 @@ function PainelDoMedico() {
           ))
         )}
       </div>
+      <footer>
+        <Link to="/">Página Inicial</Link>
+      </footer>
     </div>
   );
 }

@@ -75,6 +75,9 @@ const LoginMedico = () => {
           Fazer Login
         </button>
       </form>
+      <footer>
+        <Link to="/">Página Inicial</Link>
+      </footer>
     </>
   );
 };
