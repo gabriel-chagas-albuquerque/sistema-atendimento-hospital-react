@@ -1,10 +1,23 @@
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+
 const FilaEspera = () => {
-    const filaDeAtendimento = JSON.parse(localStorage.getItem("filaDeAtendimento"))
+    const [filaDeAtendimento, setFilaDeAtendimento] = useState([]);
+
+  useEffect(() => {
+    const dados = JSON.parse(localStorage.getItem("filaDeAtendimento")) || [];
+    setFilaDeAtendimento(dados);
+  }, []);
+
   return (
     <>
-      {filaDeAtendimento.length > 0 && (
         <div style={{ marginTop: "30px" }}>
           <h2>Fila de Atendimento</h2>
+          {filaDeAtendimento.length === 0 ? (
+        <p>Nenhum paciente na fila de espera.</p>
+      ) : (
+
           <ul style={{ listStyle: "none", padding: "0" }}>
             {filaDeAtendimento.map((item) => (
               <li
@@ -41,8 +54,11 @@ const FilaEspera = () => {
               </li>
             ))}
           </ul>
-        </div>
       )}
+      <footer>
+        <Link to="/">Página Inicial</Link>
+      </footer>
+    </div>
     </>
   );
 };

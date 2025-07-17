@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Triagem = () => {
   const [paciente, setPaciente] = useState("");
@@ -246,6 +247,10 @@ const Triagem = () => {
       </div>
 
       {/* Mostrar fila de atendimento se houver itens */}
+
+      <footer>
+        <Link to="/">Página Inicial</Link>
+      </footer>
     </div>
   );
 };
