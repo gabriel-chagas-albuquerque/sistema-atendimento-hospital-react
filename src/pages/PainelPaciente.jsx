@@ -18,7 +18,7 @@ const PainelPaciente = () => {
         <nav>
           <ul id="menu">
             <li><Link to="/paciente/cadastro">Cadastro</Link></li>
-            <li><Link to="/paciente/fila">Fila de Espera</Link></li>
+            <li><Link to="/paciente/fila-de-espera">Fila de Espera</Link></li>
           </ul>
         </nav>
       </div>

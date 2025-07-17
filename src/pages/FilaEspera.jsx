@@ -1,10 +1,14 @@
 const FilaEspera = () => {
-    const filaDeAtendimento = JSON.parse(localStorage.getItem("filaDeAtendimento"))
+    const filaDeAtendimento = JSON.parse(localStorage.getItem("filaDeAtendimento")) || [];
+
   return (
     <>
-      {filaDeAtendimento.length > 0 && (
         <div style={{ marginTop: "30px" }}>
           <h2>Fila de Atendimento</h2>
+          {filaDeAtendimento.length === 0 ? (
+        <p>Nenhum paciente na fila de espera.</p>
+      ) : (
+
           <ul style={{ listStyle: "none", padding: "0" }}>
             {filaDeAtendimento.map((item) => (
               <li
@@ -41,8 +45,8 @@ const FilaEspera = () => {
               </li>
             ))}
           </ul>
-        </div>
       )}
+        </div>
     </>
   );
 };

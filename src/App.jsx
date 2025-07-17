@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom"
 import PainelDoMedico from "./pages/PainelMedico";
 import Home from "./pages/Home";
 import PainelPaciente from "./pages/PainelPaciente";
-import Cadastro from "./pages/Cadastro";
 import FilaEspera from "./pages/FilaEspera";
 import Triagem from "./pages/Triagem";
+import Cadastro from "./pages/Cadastro";
 import AppRoutes from "./routes/AppRoutes"
 import './App.css'
 
@@ -15,9 +15,11 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/painel-medico" element={<PainelDoMedico />} />
       <Route path="/painel-paciente" element={<PainelPaciente />} />
-      <Route path="/cadastro" element={<Cadastro />} />
-      <Route path="/fila-espera" element={<FilaEspera />} />
       <Route path="/triagem" element={<Triagem />} />
+      <Route path="/paciente/cadastro" element={<Cadastro />} />
+      <Route path="/paciente/fila-de-espera" element={<FilaEspera />} />
+      <Route path="*" element={<h1>Página não encontrada</h1>} />
+      <Route path="/app/*" element={<AppRoutes />} />
     </Routes>
   )
 }
