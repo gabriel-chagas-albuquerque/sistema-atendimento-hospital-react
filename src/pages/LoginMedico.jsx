@@ -41,7 +41,7 @@ const LoginMedico = () => {
     if(!verificaLogin) {
         alert('Email ou senha incorretos')
     }else{
-        navigate('/painel-do-medico')
+        navigate('/painel-medico')
     }
   } 
   return (
