@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import '../styles/cadastro.css'
 
 function Cadastro() {
   const [paciente, setPaciente] = useState("");
@@ -24,7 +25,7 @@ function Cadastro() {
   };
 
   return (
-    <div>
+    <div class="cadastro">
       <h2>Cadastro do Paciente</h2>
       <form onSubmit={handleSubmit} id="form-cadastro">
         <div>
@@ -36,7 +37,7 @@ function Cadastro() {
             onChange={(e) => setPaciente(e.target.value)}
           />
         </div>
-        <div>
+        <div class="cadastro-seg">
           <label htmlFor="motivo">Motivo do Atendimento:</label>
           <input
             id="motivo"

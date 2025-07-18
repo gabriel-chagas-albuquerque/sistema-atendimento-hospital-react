@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import '../styles/painelPaciente.css'
 
 const PainelPaciente = () => {
     return ( 
         <>
         <div>
       <h1>Portal do Paciente</h1>
-      <p>Sistema de Atendimento Hospitalar</p>
 
       <img
         id="foto"
