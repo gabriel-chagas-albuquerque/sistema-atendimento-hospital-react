@@ -53,8 +53,8 @@ function PainelDoMedico() {
         <h2>Atendimento Atual:</h2>
         {pacienteAtual ? (
           <>
-            <p id="nomeAtendimento">Nome: {pacienteAtual.nome}</p>
-            <p id="descricaoAtendimento">Motivo: {pacienteAtual.descricao}</p>
+            <p id="nomeAtendimento">Nome: {pacienteAtual.paciente}</p>
+            <p id="descricaoAtendimento">Motivo: {pacienteAtual.motivo}</p>
             <button id="finalizarAtendimento" onClick={finalizarAtendimento}>
               Finalizar Atendimento
             </button>
@@ -72,9 +72,9 @@ function PainelDoMedico() {
           filaFiltrada.map((paciente, index) => (
             <div key={index} className={`paciente ${paciente.prioridade}`}>
               <div className="AtendimentoAtualContainer">
-                <div className="nome">Nome: {paciente.nome}</div>
+                <div className="nome">Nome: {paciente.paciente}</div>
                 <div className="prioridade">Prioridade: {paciente.prioridade}</div>
-                <div className="motivo">Motivo: {paciente.descricao}</div>
+                <div className="motivo">Motivo: {paciente.motivo}</div>
               </div>
               {index === 0 && (
                 <button onClick={() => iniciarAtendimento(index)} disabled={!!pacienteAtual}>
